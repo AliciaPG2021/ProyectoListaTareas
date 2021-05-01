@@ -71,7 +71,43 @@ selectFiltroPrioridad.addEventListener('change', recogerPrioridad);
 function recogerPrioridad(event) {
 
     let prioridad = event.target.value;
-    let filtroFinal = filtrarPrioridad(tareasNuevas, prioridad);
-    pintarVariasTareas(filtroFinal);
+    if (prioridad !== "") {
+        let filtroFinal = filtrarPrioridad(tareasNuevas, prioridad);
+        pintarVariasTareas(filtroFinal);
+    } else {
+        pintarVariasTareas(tareasNuevas);
+    }
+
 }
 
+
+//filtro por palabra
+
+
+function filtrarPalabra(pPalabra, pListaTareas) {
+
+    let palabrasTareas = pListaTareas.filter(tarea => {
+
+        return tarea.texto.toLowerCase().includes(pPalabra.toLowerCase());
+    });
+
+    return palabrasTareas;
+
+}
+
+//evento de pralabra
+
+let searchTexto = document.querySelector('#search');
+
+searchTexto.addEventListener('input', recogerSearch);
+
+function recogerSearch(event) {
+
+    if (event.target.value !== "") {
+        let listaFiltrada = filtrarPalabra(event.target.value, tareasNuevas);
+        pintarVariasTareas(listaFiltrada);
+
+    } else {
+        pintarVariasTareas(tareasNuevas);
+    }
+}
