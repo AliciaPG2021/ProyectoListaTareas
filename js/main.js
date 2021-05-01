@@ -3,6 +3,8 @@ const tareasNuevas = new Array();
 let inputText = document.querySelector('.tarea');
 let boton = document.querySelector('.boton');
 let selectPrioridad = document.querySelector('.seleccionTarea');
+let sectionPintar = document.querySelector('.pintarTarea');
+
 
 boton.addEventListener('click', recogerTareas);
 
@@ -22,6 +24,10 @@ function recogerTareas(event) {
         }
         tareasNuevas.push(nuevaTarea);
 
+        pintarVariasTareas(tareasNuevas);
+
+
+
     } else {
         alert('Todos los campos son obligatorios');
     }
@@ -31,4 +37,15 @@ function recogerTareas(event) {
 }
 
 
+function pintarUnaTarea(pTarea) {
 
+    let div = document.createElement('div');
+    div.innerHTML = `<p>Tarea: ${pTarea.texto}. Prioridad: ${pTarea.prioridad}</p>`;
+    sectionPintar.appendChild(div);
+}
+
+function pintarVariasTareas(pTareas) {
+    sectionPintar.innerHTML = "";
+    pTareas.forEach(tarea => pintarUnaTarea(tarea));
+
+}
