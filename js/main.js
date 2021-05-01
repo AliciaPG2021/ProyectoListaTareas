@@ -49,3 +49,29 @@ function pintarVariasTareas(pTareas) {
     pTareas.forEach(tarea => pintarUnaTarea(tarea));
 
 }
+
+//filtrar por prioridad
+
+function filtrarPrioridad(pListaTareas, pPrioridad) {
+
+    const prioridadTareas = pListaTareas.filter(tarea => {
+        return tarea.prioridad === pPrioridad
+    });
+
+    return prioridadTareas;
+
+}
+
+//evento de prioridad
+
+let selectFiltroPrioridad = document.querySelector('#elegirTarea');
+
+selectFiltroPrioridad.addEventListener('change', recogerPrioridad);
+
+function recogerPrioridad(event) {
+
+    let prioridad = event.target.value;
+    let filtroFinal = filtrarPrioridad(tareasNuevas, prioridad);
+    pintarVariasTareas(filtroFinal);
+}
+
