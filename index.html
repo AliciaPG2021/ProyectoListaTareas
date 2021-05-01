@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica Final. Administrador de Tareas</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Tareas</h1>
+
+        <form>
+            <input type="text" class="tarea" placeholder="Nueva tarea">
+
+            <div>
+                <select class="nuevaTarea">
+                    <option value="">Selecciona una prioridad</option>
+                    <option value="urgente">Urgente</option>
+                    <option value="diaria">Diaria</option>
+                    <option value="mensual">Mensual</option>
+                </select>
+            </div>
+
+            <button class="boton">Guardar</button>
+
+        </form>
+
+    </header>
+
+    <hr>
+
+    <main>
+
+        <div>
+            <select id="elegirTarea">
+                <option value="">Prioridad</option>
+                <option value="urgente">Urgente</option>
+                <option value="diaria">Diaria</option>
+                <option value="mensual">Mensual</option>
+            </select>
+        </div>
+
+        <input type="text" id="search" placeholder="Buscar una tarea">
+
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

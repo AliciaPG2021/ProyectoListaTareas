@@ -1,0 +1,33 @@
+*{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+body{
+    width: 600px;
+}
+
+header h1{
+width: auto;
+height: 50px;
+text-align: center;
+background-color: aqua;
+border: 1px solid black;
+border-radius: 10%;
+margin: 20px;
+    
+}
+
+header form{
+    display:flex;
+    margin:20px;
+}
+
+header .tarea{
+    margin-right: 10px;
+}
+
+header .boton{
+     margin-left: 10px;
+}
+
