@@ -52,16 +52,14 @@ main h3{
 }
 main #search{
     margin-left: 10px;
-    
 }
-
 
 
 .pintarTarea article{
     width: auto;
 display: grid;
 grid-template-columns: 3fr 1fr 1fr;
-
+gap: 0.5em;
     margin:20px;
     border: 1px dotted black;
     padding:10px;
@@ -73,6 +71,10 @@ grid-template-columns: 3fr 1fr 1fr;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 20px;
 
+}
+
+.pintarTarea button{
+    height: 25px;
 }
 
 

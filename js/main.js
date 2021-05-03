@@ -18,6 +18,7 @@ function recogerTareas(event) {
     let seleccionTarea = selectPrioridad.value;
 
 
+
     if (textoTarea !== "" && seleccionTarea !== 0) {
 
         const nuevaTarea = {
@@ -37,8 +38,10 @@ function recogerTareas(event) {
 
 
 
-
+    inputText.value = "";
+    selectPrioridad.value = "";
     console.log(tareasNuevas);
+
 }
 
 
@@ -65,6 +68,15 @@ function pintarUnaTarea(pTarea) {
         console.log(index);
         tareasNuevas.splice(index, 1);
     });
+    //Colores
+    if (pTarea.prioridad === 'Urgente') {
+        article.style.backgroundColor = 'tomato';
+    } else if (pTarea.prioridad === 'Diaria') {
+        article.style.backgroundColor = 'lightgreen';
+    } else if (pTarea.prioridad === 'Mensual') {
+        article.style.backgroundColor = 'lightpink'
+    }
+
 
 
 
@@ -73,6 +85,7 @@ function pintarUnaTarea(pTarea) {
 }
 
 function pintarVariasTareas(pTareas) {
+
     sectionPintar.innerHTML = "";
 
     pTareas.forEach(tarea => pintarUnaTarea(tarea));
