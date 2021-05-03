@@ -5,24 +5,33 @@
 }
 body{
     width: 600px;
+    background-color: lightcyan;
+   
 }
 
 header h1{
 width: auto;
 height: 50px;
 text-align: center;
-background-color: aqua;
+background-color:lightskyblue   ;
 border: 1px solid black;
 border-radius: 10%;
-margin: 20px;
+box-shadow: 2px 2px 2px 2px lightslategrey;
+margin:20px;
     
+}
+
+header h2{
+  margin:20px;
 }
 
 header form{
     display:flex;
     margin:20px;
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+   
 }
-
 header .tarea{
     margin-right: 10px;
 }
@@ -30,4 +39,43 @@ header .tarea{
 header .boton{
      margin-left: 10px;
 }
+
+main #flex{
+     display:flex;
+   margin:20px;
+   border-bottom: 1px solid black;
+    padding-bottom: 20px;
+}
+
+main h3{
+    margin:20px;
+}
+main #search{
+    margin-left: 10px;
+    
+}
+
+
+
+.pintarTarea article{
+    width: auto;
+display: grid;
+grid-template-columns: 3fr 1fr 1fr;
+
+    margin:20px;
+    border: 1px dotted black;
+    padding:10px;
+}
+
+.pintarTarea h2{
+    width: auto;
+    text-align: left;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+
+}
+
+
+
+
 

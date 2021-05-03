@@ -4,6 +4,7 @@ let inputText = document.querySelector('.tarea');
 let boton = document.querySelector('.boton');
 let selectPrioridad = document.querySelector('.seleccionTarea');
 let sectionPintar = document.querySelector('.pintarTarea');
+let idActual = 0;
 
 
 boton.addEventListener('click', recogerTareas);
@@ -11,6 +12,7 @@ boton.addEventListener('click', recogerTareas);
 function recogerTareas(event) {
 
     event.preventDefault();
+    idActual++;
 
     let textoTarea = inputText.value.trim();
     let seleccionTarea = selectPrioridad.value;
@@ -19,6 +21,7 @@ function recogerTareas(event) {
     if (textoTarea !== "" && seleccionTarea !== 0) {
 
         const nuevaTarea = {
+            id: idActual,
             texto: textoTarea,
             prioridad: seleccionTarea,
         }
@@ -33,19 +36,45 @@ function recogerTareas(event) {
     }
 
 
+
+
     console.log(tareasNuevas);
 }
 
 
 function pintarUnaTarea(pTarea) {
 
-    let div = document.createElement('div');
-    div.innerHTML = `<p>Tarea: ${pTarea.texto}. Prioridad: ${pTarea.prioridad}</p>`;
-    sectionPintar.appendChild(div);
+    let article = document.createElement('article');
+    let botonBorrar = document.createElement('button');
+
+    let contentBotonBorrar = document.createTextNode('Borrar');
+    botonBorrar.appendChild(contentBotonBorrar);
+
+
+
+    article.innerHTML = `<h2> ${pTarea.texto} </h2> 
+                            <p>${pTarea.prioridad}</p>`;
+
+
+    botonBorrar.addEventListener('click', () => {//eliminar tarea del interfaz
+        article.remove();
+
+        let index = tareasNuevas.findIndex(tarea => {//eliminar tarea del array
+            return tarea.id === pTarea.id;
+        })
+        console.log(index);
+        tareasNuevas.splice(index, 1);
+    });
+
+
+
+    article.appendChild(botonBorrar);
+    sectionPintar.appendChild(article);
 }
 
 function pintarVariasTareas(pTareas) {
     sectionPintar.innerHTML = "";
+
     pTareas.forEach(tarea => pintarUnaTarea(tarea));
 
 }
@@ -111,3 +140,12 @@ function recogerSearch(event) {
         pintarVariasTareas(tareasNuevas);
     }
 }
+
+
+
+
+
+
+
+
+

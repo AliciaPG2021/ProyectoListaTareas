@@ -13,6 +13,8 @@
     <header>
         <h1>Tareas</h1>
 
+        <h2>Añade una tarea</h2>
+
         <form>
             <input type="text" class="tarea" placeholder="Nueva tarea">
 
@@ -31,26 +33,36 @@
 
     </header>
 
-    <hr>
+
 
     <main>
 
-        <div>
-            <select id="elegirTarea">
-                <option value="">Prioridad</option>
-                <option value="urgente">Urgente</option>
-                <option value="diaria">Diaria</option>
-                <option value="mensual">Mensual</option>
-            </select>
+        <h3>Buscador de Tareas</h3>
+
+        <div id="flex">
+
+            <div>
+                <select id="elegirTarea">
+                    <option value="">Prioridad</option>
+                    <option value="urgente">Urgente</option>
+                    <option value="diaria">Diaria</option>
+                    <option value="mensual">Mensual</option>
+                </select>
+            </div>
+
+            <input type="text" id="search" placeholder="Buscar una tarea">
         </div>
 
-        <input type="text" id="search" placeholder="Buscar una tarea">
-
-
-
-        <section class="pintarTarea"></section>
-
-
+        <div id="elegir">
+            <section class="pintarTarea">
+                <!--  <article>
+                    <h2>Tarea:</h2>
+                    <p>Prioridad</p>
+                    <button id="borrar">Borrar</button>
+                </article>
+                -->
+            </section>
+        </div>
 
     </main>
 
